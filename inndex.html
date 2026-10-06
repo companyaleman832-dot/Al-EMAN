@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>من نحن - مصنع الايمــــان لمعدات الأعلاف</title>
+    <!-- خط Tajawal للعربية -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- أيقونات Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* =========================================
+           متغيرات الألوان والنظام الشامل (Light & Dark)
+           ========================================= */
+        :root {
+            --bg-page: #f8f9fa;
+            --bg-header: #ffffff;
+            --text-main: #1a1a1a;
+            --text-muted: #666666;
+            --border-color: #e5e7eb;
+            
+            --accent-gold: #e5a823;
+            --accent-gold-hover: #d89b1c;
+
+            --story-card-gradient: linear-gradient(145deg, #181818 0%, #0a0a0a 100%);
+            --story-text-title: #ffffff;
+            --story-text-desc: #cccccc;
+            --story-badge-bg: rgba(229, 168, 35, 0.12);
+            --story-box-bg: rgba(255, 255, 255, 0.05);
+            --story-box-border: rgba(255, 255, 255, 0.08);
+
+            --bg-footer: #0f0f11;
+            --footer-text: #a0a0a0;
+            --footer-border: rgba(255, 255, 255, 0.08);
+        }
+
+        /* الوضع الداكن الداعم للمتصفح والتبديل اليدوي */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-page: #121214;
+                --bg-header: #1a1a1e;
+                --text-main: #f3f4f6;
+                --text-muted: #9ca3af;
+                --border-color: #2e2e34;
+            }
+        }
+
+        body.dark {
+            --bg-page: #121214;
+            --bg-header: #1a1a1e;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --border-color: #2e2e34;
+        }
+
+        body.light {
+            --bg-page: #f8f9fa;
+            --bg-header: #ffffff;
+            --text-main: #1a1a1a;
+            --text-muted: #666666;
+            --border-color: #e5e7eb;
+        }
+
+        /* =========================================
+           التنسيقات العامة
+           ========================================= */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* =========================================
+           الهيدر (Header)
+           ========================================= */
+        .site-header {
+            background-color: var(--bg-header);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* اللوجو */
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: var(--text-main);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent-gold);
+            color: #1a1a1a;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        /* القائمة الرئيسية */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.98rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent-gold);
+        }
+
+        /* أزرار الإجراءات */
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .btn-contact {
+            background-color: var(--accent-gold);
+            color: #1a1a1a;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 10px 22px;
+            border-radius: 25px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn-contact:hover {
+            background-color: var(--accent-gold-hover);
+            transform: translateY(-2px);
+        }
+
+        /* =========================================
+           محتوى الصفحة الرئيسي (Main Content)
+           ========================================= */
+        .main-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+        }
+
+        .story-wrapper-section {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .story-card {
+            background: var(--story-card-gradient);
+            border-radius: 28px;
+            padding: 60px 40px 50px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .story-badge {
+            display: inline-block;
+            background-color: var(--story-badge-bg);
+            color: var(--accent-gold);
+            border: 1px solid rgba(229, 168, 35, 0.3);
+            padding: 6px 20px;
+            border-radius: 50px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .story-title {
+            color: var(--story-text-title);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 24px;
+            line-height: 1.25;
+        }
+
+        .story-description {
+            color: var(--story-text-desc);
+            font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+            line-height: 2;
+            max-width: 860px;
+            margin: 0 auto 45px;
+            font-weight: 400;
+        }
+
+        .story-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .story-stat-box {
+            background: var(--story-box-bg);
+            border: 1px solid var(--story-box-border);
+            border-radius: 18px;
+            padding: 28px 15px;
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+        }
+
+        .story-stat-box:hover {
+            transform: translateY(-5px);
+            border-color: rgba(229, 168, 35, 0.4);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .story-stat-num {
+            color: var(--accent-gold);
+            font-size: clamp(1.8rem, 3vw, 2.4rem);
+            font-weight: 800;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .story-stat-text {
+            color: var(--story-text-desc);
+            font-size: 0.92rem;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        /* =========================================
+           الفوتر (Footer)
+           ========================================= */
+        .site-footer {
+            background-color: var(--bg-footer);
+            color: var(--footer-text);
+            padding-top: 60px;
+            border-top: 1px solid var(--footer-border);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 40px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+        }
+
+        .footer-brand .logo-area {
+            color: #ffffff;
+            margin-bottom: 16px;
+        }
+
+        .footer-about {
+            font-size: 0.92rem;
+            line-height: 1.8;
+            color: #888888;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-icon {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: var(--accent-gold);
+            color: #1a1a1a;
+            border-color: var(--accent-gold);
+        }
+
+        .footer-title {
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 30px;
+            height: 2px;
+            background-color: var(--accent-gold);
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links a {
+            font-size: 0.92rem;
+            color: #888888;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .contact-info {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 0.92rem;
+        }
+
+        .contact-info li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #888888;
+        }
+
+        .contact-info i {
+            color: var(--accent-gold);
+        }
+
+        .footer-bottom {
+            background-color: #08080a;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #666666;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* =========================================
+           التجاوب الشامل (Responsive)
+           ========================================= */
+        @media (max-width: 992px) {
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* ينصح بإضافة قائمة موبايل جانبي عند الحاجة */
+            }
+
+            .main-content {
+                padding: 40px 15px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .story-stats-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= الهيدر ================= -->
+    <header class="site-header">
+        <div class="header-container">
+            <!-- اللوجو -->
+            <a href="#" class="logo-area">
+                <div class="logo">
+                  <img style="width: 80px; height: 80px" src="img/1.png" alt="">
+                </div>
+                <span>مصنع الايمــــان</span>
+            </a>
+
+          
+
+            <!-- زر التواصل -->
+            <div class="header-actions">
+                <a href="https://wa.me201044100521" class="btn-contact">تواصل معنا</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= المحتوى الرئيسي ================= -->
+    <main class="main-content">
+        <section class="story-wrapper-section">
+            <div class="story-card">
+                
+                <!-- البادج العلوي -->
+                <div class="story-badge">
+                    من ورشة صغيرة إلى مصنع متخصص
+                </div>
+
+                <!-- العنوان -->
+                <h2 class="story-title">
+                    من نحن في مصنع الايمــــان
+                </h2>
+
+                <!-- النص الوصفي -->
+                <p class="story-description">
+                    بدأت حكاية مصنع الايمان عام 2020 كورشة صغيرة، بدافع شغف مؤسسه المهندس فرج  بالتطوير والابتكار في صناعة معدات الأعلاف، ومع نمو الخبرة وزيادة ثقة العملاء، تحولت الورشة رسمياً عام 2023 إلى مصنع كبير مجهز بأحدث الآلات والتقنيات، ليصبح مصنع الايمان اليوم أحد أبرز المصانع المصرية المتخصصة في تصنيع معدات الأعلاف وخطوط إنتاجها.
+                </p>
+
+                <!-- كروت الأرقام الثلاثية -->
+                <div class="story-stats-grid">
+                    <div class="story-stat-box">
+                        <div class="story-stat-num">2020</div>
+                        <div class="story-stat-text">بداية الرحلة كورشة متخصصة</div>
+                    </div>
+
+                    <div class="story-stat-box">
+                        <div class="story-stat-num">2023</div>
+                        <div class="story-stat-text">التحول إلى مصنع متكامل</div>
+                    </div>
+
+                    <div class="story-stat-box">
+                        <div class="story-stat-num">100%</div>
+                        <div class="story-stat-text">تركيز على معدات وخطوط الأعلاف</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= الفوتر ================= -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- العمود الأول: نبذة -->
+            <div class="footer-brand">
+                <div class="logo-area">
+                    <div class="log-icon">
+                        <img style="width: 50px; height: 50px;" src="img/1.png" alt="">
+                    </div>
+                    <span>مصنع الايمــــان</span>
+                </div>
+                <p class="footer-about">
+                    المصنع الرائد في تصنيع وتطوير خطوط إنتاج الأعلاف بأعلى معايير الجودة والتكنولوجيا الحديثة في مصر والشرق الأوسط.
+                </p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/1ByyWPKpuF/" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                 <a href="https://www.youtube.com/@Al-Eman-egy" target="_blank" class="flex items-center gap-3 bg-white dark:bg-gray-800 px-6 py-3.5 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition border border-gray-200 dark:border-gray-700 group"></a>
+                    <a href="https://wa.me201044100521" class="social-icon"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <!-- العمود الثاني: روابط سريعة -->
+            <div>
+                <h4 class="footer-title">روابط سريعة</h4>
+                <ul class="footer-links">
+                    <li><a href="#">الرئيسية</a></li>
+                    <li><a href="#">عن الشركة</a></li>
+                    <li><a href="#">معرض المنتجات</a></li>
+                    <li><a href="#">الأخبار والمدونة</a></li>
+                </ul>
+            </div>
+
+            <!-- العمود الثالث: المنتجات -->
+            <div>
+                <h4 class="footer-title">خطوط الإنتاج</h4>
+                <ul class="footer-links">
+                    <li><a href="#">مجاريش الأعلاف</a></li>
+                    <li><a href="#">خلاطات الأعلاف</a></li>
+                    <li><a href="#">مكابس الأعلاف</a></li>
+                    <li><a href="#">خطوط كاملة 10 طن/ساعة</a></li>
+                </ul>
+            </div>
+
+            <!-- العمود الرابع: معلومات التواصل -->
+            <div>
+                <h4 class="footer-title">تواصل معنا</h4>
+                <ul class="contact-info">
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>جمهورية مصر العربية - محافظة الجيزه -البدرشين </span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+20 1044100521</span>
+                             <span>+20 1044100126</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>info@aleman-factory.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- أسطر حقوق الملكية -->
+        <div class="footer-bottom">
+            <p>جميع الحقوق محفوظة © 2026 لمصنع الايمان لتصنيع معدات الأعلاف.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

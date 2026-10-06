@@ -1,0 +1,229 @@
+/* =========================================
+   متغيرات الألوان للسكشن (Dark & Light Mode)
+   ========================================= */
+:root {
+    --about-bg-card: #ffffff;
+    --about-bg-dark-box: #1a1a1a;
+    --about-text-title: #1a1a1a;
+    --about-text-desc: #555555;
+    --about-text-dark-box: #ffffff;
+    --about-accent-gold: #e5a823;
+    --about-card-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    --about-border-color: rgba(0, 0, 0, 0.05);
+}
+
+/* دعم التبديل الآلي حسب وضع الجهاز/المتصفح */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --about-bg-card: #1e1e1e;
+        --about-bg-dark-box: #252525;
+        --about-text-title: #f1f1f1;
+        --about-text-desc: #a0a0a0;
+        --about-text-dark-box: #ffffff;
+        --about-card-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        --about-border-color: rgba(255, 255, 255, 0.05);
+    }
+}
+
+/* دعم التبديل اليدوي عن طريق إضافة كلاس dark لصفحتك */
+body.dark, html.dark, .dark-mode .about-section {
+    --about-bg-card: #1e1e1e;
+    --about-bg-dark-box: #252525;
+    --about-text-title: #f1f1f1;
+    --about-text-desc: #a0a0a0;
+    --about-text-dark-box: #ffffff;
+    --about-card-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    --about-border-color: rgba(255, 255, 255, 0.05);
+}
+
+body.light, html.light {
+    --about-bg-card: #ffffff;
+    --about-bg-dark-box: #1a1a1a;
+    --about-text-title: #1a1a1a;
+    --about-text-desc: #555555;
+    --about-text-dark-box: #ffffff;
+    --about-card-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    --about-border-color: rgba(0, 0, 0, 0.05);
+}
+
+/* =========================================
+   تنسيقات سكشن "عن الشركة" (Responsive)
+   ========================================= */
+.about-section {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    font-family: 'Tajawal', sans-serif;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.about-section * {
+    box-sizing: border-box;
+}
+
+/* الجزء الأيمن: النص والتفاصيل */
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.subtitle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.subtitle-line {
+    width: 24px;
+    height: 3px;
+    background-color: var(--about-accent-gold);
+    border-radius: 2px;
+}
+
+.about-subtitle {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--about-accent-gold);
+}
+
+.about-title {
+    font-size: clamp(1.6rem, 3.5vw, 2.5rem); /* حجم خط متجاوب تلقائياً */
+    font-weight: 800;
+    line-height: 1.35;
+    color: var(--about-text-title);
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+.about-description {
+    font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+    line-height: 1.8;
+    color: var(--about-text-desc);
+    margin-bottom: 28px;
+    transition: color 0.3s ease;
+}
+
+.btn-about {
+    display: inline-block;
+    background-color: var(--about-accent-gold);
+    color: #1a1a1a;
+    font-weight: 800;
+    font-size: 1rem;
+    padding: 12px 32px;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(229, 168, 35, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-about:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(229, 168, 35, 0.45);
+    background-color: #d89b1c;
+}
+
+/* الجزء الأيسر: الأرقام والـ Banners */
+.stats-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+.stats-top-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.stat-card {
+    background-color: var(--about-bg-card);
+    border: 1px solid var(--about-border-color);
+    border-bottom: 4px solid var(--about-accent-gold);
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: var(--about-card-shadow);
+    transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-number {
+    font-size: clamp(1.8rem, 3vw, 2.2rem);
+    font-weight: 800;
+    color: var(--about-text-title);
+    margin-bottom: 6px;
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.stat-label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--about-text-desc);
+    transition: color 0.3s ease;
+}
+
+.knowledge-box {
+    background-color: var(--about-bg-dark-box);
+    color: var(--about-text-dark-box);
+    border-radius: 12px;
+    padding: 35px 20px;
+    text-align: center;
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-weight: 800;
+    box-shadow: var(--about-card-shadow);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.knowledge-box:hover {
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   التجاوب للشاشات المختلفة (Responsive Queries)
+   ========================================= */
+@media (max-width: 992px) {
+    .about-section {
+        grid-template-columns: 1fr; /* تحويل العرض إلى عمود واحد */
+        gap: 40px;
+        padding: 40px 20px;
+    }
+
+    .about-content {
+        text-align: center;
+        align-items: center; /* سنترة المحتوى في التابلت والموبايل */
+    }
+
+    .subtitle-wrapper {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-top-row {
+        grid-template-columns: 1fr; /* جعل الكروت فوق بعضها في الموبايل الصغير */
+    }
+
+    .about-section {
+        padding: 30px 15px;
+    }
+
+    .stat-card {
+        padding: 20px 15px;
+    }
+
+    .knowledge-box {
+        padding: 25px 15px;
+    }
+}

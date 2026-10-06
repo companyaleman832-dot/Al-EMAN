@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>شركة الإيمان لمعدات الأعلاف | El Eman Feed Equipment</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fffbe1',
+                            100: '#fff3b8',
+                            500: '#eab308',
+                            600: '#ca8a04',
+                            700: '#a16207',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Cairo', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-xl from-amber-500 to-amber-700 flex items-center justify-center text-white text-2xl font-black ">
+                       <img style="height: 70px; width: 200px;" src="img/1.png" alt="">
+                    </div>
+                    <div>
+                        <span class="text-xl font-black tracking-tight text-gray-900 dark:text-white block leading-none" id="brand-title">شركة الإيمان</span>
+                        <span class="text-xs text-amber-600 dark:text-amber-400 font-semibold" id="brand-subtitle">لتصنيع معدات وخطوط الأعلاف</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden md:flex items-center gap-8 font-semibold">
+                    <a href="#hero" class="hover:text-amber-500 transition-colors" id="nav-home">الرئيسية</a>
+                    <a href="#" class="hover:text-amber-500 transition-colors" id="nav-about">عن المصنع</a>
+                    <a href="#equipment-section" class="hover:text-amber-500 transition-colors" id="nav-products">المعدات والمنتجات</a>
+                    <a href="#calculator" class="hover:text-amber-500 transition-colors" id="nav-calc">حاسبة الخطوط</a>
+                    <a href="#contact" class="hover:text-amber-500 transition-colors" id="nav-contact">تواصل معنا</a>
+                </nav>
+
+                <!-- Action Controls (Theme, Language, Socials) -->
+                <div class="flex items-center gap-3">
+                    <!-- Language Switcher -->
+                    <button onclick="toggleLanguage()" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition text-sm font-bold flex items-center gap-1">
+                        <i class="fa-solid fa-globe text-amber-500"></i>
+                        <span id="lang-btn-text">EN</span>
+                    </button>
+
+                    <!-- Dark Mode Switcher -->
+                    <button onclick="toggleDarkMode()" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+                        <i id="theme-icon" class="fa-solid fa-sun text-amber-400 text-lg"></i>
+                    </button>
+
+                    <!-- Contact WhatsApp -->
+                    <a href="https://wa.me/201044100521" target="_blank" class="hidden sm:flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg text-sm font-bold shadow-md shadow-emerald-600/20 transition">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span id="btn-whatsapp-header">واتساب</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative py-20 overflow-hidden bg-gradient-to-b from-amber-500/10 via-transparent to-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="inline-block px-4 py-1.5 rounded-full text-xs font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20" id="hero-badge">
+                        الجودة والصلابة في تصنيع المعدات
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight" id="hero-title">
+                            شــركة الايمــــــــــــان لتصنيع معدات  <span class="text-amber-500">الأعــــــلاف</span>
+                    </h1>
+                    <p class="text-lg text-gray-600 dark:text-gray-300 max-w-xl" id="hero-desc">
+                        نصنع أفضل المجارش، الخلاطات، والبراريم بأعلى معايير المتانة والتصنيع الدقيق لضمان أعلى إنتاجية لمشروعك بأقل استهلاك للطاقة.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="#equipment-section" class="bg-amber-500 hover:bg-amber-600 text-gray-900 font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-amber-500/25 transition flex items-center gap-2" id="hero-btn-products">
+                            <i class="fa-solid fa-gears"></i> استعراض المعدات
+                        </a>
+                        <a href="#calculator" class="bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 font-bold px-6 py-3.5 rounded-xl transition flex items-center gap-2" id="hero-btn-calc">
+                            <i class="fa-solid fa-calculator"></i> احسب خط إنتاجك
+                        </a>
+                    </div>
+                </div>
+                <div class="relative">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+     
+<section class="about-section">
+    
+    <!-- الجزء الأيمن: النص والتفاصيل -->
+    <div class="about-content">
+        <div class="subtitle-wrapper">
+            <span class="about-subtitle">عن شركة الايمــــان</span>
+            <span class="subtitle-line"></span>
+        </div>
+        
+        <h2 class="about-title">بناء مصنع أعلاف مع شركة الايمــــان ضمانُ للنجاح</h2>
+        
+        <p class="about-description">
+            منذ 2010، يعمل فريقنا الهندسي على تصميم وتطوير حلول تضمن أعلى جودة وأعلى مستويات السلامة والأداء الأمثل في عملية الإنتاج. نبني مصانع بجميع الأحجام، من 1.5 طن/ساعة حتى 10 طن/ساعة، ونغطي الهندسة والإنتاج والتجميع وخدمات ما بعد البيع.
+        </p>
+        
+        <a href="inndex.html" class="btn-about">تعرف على الشركة</a>
+    </div>
+
+    <!-- الجزء الأيسر: الأرقام والـ Banners -->
+    <div class="stats-wrapper">
+        <div class="stats-top-row">
+            <!-- كارت 1 -->
+            <div class="stat-card">
+                <div class="stat-number">+5</div>
+                <div class="stat-label">عام خبرة</div>
+            </div>
+
+            <!-- كارت 2 -->
+            <div class="stat-card">
+                <div class="stat-number">10 طن</div>
+                <div class="stat-label">قدرات إنتاجية متنوعة</div>
+            </div>
+        </div>
+
+        <!-- البوكس السفلي -->
+        <div class="knowledge-box">
+            مركز المعرفة
+        </div>
+    </div>
+
+</section>
+
+    
+
+   <!-- =========================================
+    قسم معرض المعدات والأجهزة (Equipment Section)
+========================================= -->
+
+<!-- روابط الخطوط والأيقونات (ضَعها في <head> الخاص بموقعك إذا لم تكن موجودة مسبقاً) -->
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+    /* =========================================
+       1. متغيرات الألوان والتنسيقات للسكشن
+       ========================================= */
+    #equipment-section {
+        font-family: 'Tajawal', sans-serif;
+        padding: 60px 15px;
+        background-color: var(--bg-body, #f6f5f1);
+        color: var(--text-title, #1a1a1a);
+        transition: background-color 0.3s ease, color 0.3s ease;
+
+        /* Light Theme (الوضع الافتراضي للسكشن) */
+        --bg-body: #f6f5f1;
+        --bg-card: #ffffff;
+        --bg-card-img: #fbf8f3;
+        --text-title: #1a1a1a;
+        --text-desc: #666666;
+        --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        --card-shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.1);
+        --border-color: rgba(0, 0, 0, 0.04);
+    }
+
+    /* دعم الوضع الداكن Dark Mode تلقائياً أو عبر كلاس .dark */
+    @media (prefers-color-scheme: dark) {
+        #equipment-section {
+            --bg-body: #121212;
+            --bg-card: #1e1e1e;
+            --bg-card-img: #282724;
+            --text-title: #f1f1f1;  
+            --text-desc: #a0a0a0;
+            --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            --card-shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.5);
+            --border-color: rgba(255, 255, 255, 0.05);
+        }
+    }
+
+    body.dark #equipment-section, 
+    html.dark #equipment-section {
+        --bg-body: #121212;
+        --bg-card: #1e1e1e;
+        --bg-card-img: #282724;
+        --text-title: #f1f1f1;
+        --text-desc: #a0a0a0;
+        --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        --card-shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.5);
+        --border-color: rgba(255, 255, 255, 0.05);
+    }
+
+    /* =========================================
+       2. شبكة الكروت Responsive Grid
+       ========================================= */
+    #equipment-section .eq-container {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    #equipment-section .equipment-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 60px;
+    }
+
+    /* تصميم الكارت */
+    #equipment-section .equipment-card {
+        background-color: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: var(--card-shadow);
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    }
+
+    #equipment-section .equipment-card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--card-shadow-hover);
+    }
+
+    /* منطقة الصورة */
+    #equipment-section .card-img-holder {
+        background-color: var(--bg-card-img);
+        height: 400px;
+      
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        transition: background-color 0.3s ease;
+    }
+
+    #equipment-section .card-img-holder img {
+        max-width: 140%;
+        max-height: 100%;
+        object-fit: contain;
+        filter: drop-shadow(0 4px 8px rgba(0,0,0,0.08)); 
+    
+    }
+
+    /* تفاصيل الكارت */
+    #equipment-section .card-info {
+        background-color: var(--bg-card);
+        padding: 20px 20px 24px;
+        text-align: center;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        transition: background-color 0.3s ease;
+    }
+
+    #equipment-section .card-title {
+        font-size: 1.2rem;
+        font-weight: 800;
+        color: var(--text-title);
+        margin-bottom: 10px;
+        transition: color 0.3s ease;
+    }
+
+    #equipment-section .card-description {
+        font-size: 0.9rem;
+        color: var(--text-desc);
+        line-height: 1.6;
+        font-weight: 400;
+        transition: color 0.3s ease;
+    }
+
+    /* =========================================
+       3. الأزرار العائمة Floating Buttons
+       ========================================= */
+    .btn-float-whatsapp {
+        position: fixed;
+        bottom: 25px;
+        left: 25px;
+        width: 52px;
+        height: 52px;
+        background-color: #25d366;
+        color: #ffffff !important;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 28px;
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        text-decoration: none;
+        z-index: 1000;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-float-whatsapp:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+    } 
+
+    .btn-float-scrolltop {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        width: 48px;
+        height: 48px;
+        background-color: #e5a823;
+        color: #ffffff;
+        border: none;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        box-shadow: 0 4px 15px rgba(229, 168, 35, 0.4);
+        cursor: pointer;
+        z-index: 1000;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .btn-float-scrolltop:hover {
+        background-color: #d19519;
+        transform: scale(1.08);
+    }
+
+    /* =========================================
+       4. التجاوب (Responsive)
+       ========================================= */
+    @media (max-width: 992px) {
+        #equipment-section .equipment-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        #equipment-section .card-img-holder {
+            height: 200px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        #equipment-section {
+            padding: 35px 12px;
+        }
+        #equipment-section .equipment-grid {
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+        #equipment-section .card-img-holder {
+            height: 180px;
+        }
+        #equipment-section .card-title {
+            font-size: 1.15rem;
+        }
+        #equipment-section .card-description {
+            font-size: 0.88rem;
+        }
+        .btn-float-whatsapp {
+            bottom: 15px;
+            left: 15px;
+            width: 46px;
+            height: 46px;
+            font-size: 24px;
+        }
+        .btn-float-scrolltop {
+            bottom: 15px;
+            right: 15px;
+            width: 42px;
+            height: 42px;
+            font-size: 16px;
+        }
+    }
+</style>
+
+<section id="equipment-section"> 
+    <div class="eq-container">
+        <div class="equipment-grid">
+
+            <!-- كارت 1: المبردات -->
+            <div class="equipment-card">
+                <div class="card-img-holder">
+                    <img src="img/mobard.png" alt="المبردات">
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">المبردات</h3>
+                    <p class="card-description">تساعد على خفض درجة حرارة العلف بعد الكبس وتحسين ثبات وجودة المنتج النهائي.</p>
+                </div>
+            </div>
+
+            <!-- كارت 2: مكبس 3 طن -->
+            <div class="equipment-card">
+                <div class="card-img-holder">
+                    <img src="img/khazan.png" alt="مكبس 3 طن">
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title"> الخزان </h3>
+                    <p class="card-description">حل عملي للمشروعات المتوسطة التي تحتاج إنتاجية ثابتة وتشغيل اقتصادي.</p>
+                </div>
+            </div>
+
+            <!-- كارت 3: مكبس طن ونصف -->
+            <div class="equipment-card">
+                <div class="card-img-holder">
+                    <img src="img/nom.png" alt="مكبس طن ونصف">
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">المكبس  </h3>
+                    <p class="card-description">اختيار مناسب لبداية مشروع مصنع أعلاف بإنتاجية متوازنة ومساحة تشغيل أقل.</p>
+                </div>
+            </div>
+
+            <!-- كارت 4: الغربال -->
+            <div class="equipment-card">
+                <div class="card-img-holder">
+                    <img src="img/ghorbal.png" alt="الغربال">
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">الغربال</h3>
+                    <p class="card-description">يفصل الشوائب والناعم لرفع جودة الخلطة وضمان انتظام الحبيبات.</p>
+                </div>
+            </div>
+
+            <!-- كارت 5: الخلاط -->
+            <div class="equipment-card">
+                <div class="card-img-holder">
+                    <img src="img/MIXER.png" alt="الخلاط">
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">الخلاط</h3>
+                    <p class="card-description">خلط متجانس للمكونات لضمان توزيع العناصر الغذائية بدقة.</p>
+                </div>
+            </div>
+
+            <!-- كارت 6: المجرشة -->
+            <div class="equipment-card">
+                <div class="card-img-holder">
+                    <img src="img/magrasha.png" alt="المجرشة">
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">المجرشة</h3>
+                    <p class="card-description">طحن فعال للحامات قبل الخلط والكبس بما يناسب نوع العلف.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- زر الواتساب العائم -->
+    <a href="https://wa.me/201044100521" target="_blank" class="btn-float-whatsapp" title="تواصل عبر الواتساب">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- زر التمرير لأعلى العائم -->
+    <button class="btn-float-scrolltop" onclick="scrollToTopSection()" title="للأعلى">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+</section>
+
+<script>
+    function scrollToTopSection() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+</script>
+                <!-- Dynamic Products will be rendered by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Line Specs Calculator -->
+    <section id="calculator" class="py-20">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-gray-900 to-gray-800 text-white rounded-3xl p-8 sm:p-12 border border-gray-700 shadow-2xl relative overflow-hidden">
+                <div class="relative z-10">
+                    <div class="text-center mb-8">
+                        <span class="text-amber-400 text-sm font-bold uppercase tracking-wider" id="calc-badge">خدمة التخطيط السريع</span>
+                        <h2 class="text-3xl font-black mt-2" id="calc-title">حاسبة خط إنتاج العلاف</h2>
+                        <p class="text-gray-400 text-sm mt-2" id="calc-desc">حدد الطاقة الإنتاجية المطلوبة وسنقوم باقتراح تشكيلة المعدات المناسبة لك فورياً</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-bold text-gray-300 mb-2" id="label-cap">الطاقة الإنتاجية المطلوبة:</label>
+                                <select id="calc-capacity" class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-500">
+                                    <option value="0.5">نصف طن / ساعة (0.5 Ton/h)</option>
+                                    <option value="1" selected>1 طن / ساعة (1 Ton/h)</option>
+                                    <option value="1.5">1.5 طن / ساعة (1.5 Ton/h)</option>
+                                    <option value="3">3 طن / ساعة (3 Ton/h)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-300 mb-2" id="label-type">نوع العلف المراد إنتاجه:</label>
+                                <select id="calc-feed-type" class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-500">
+                                    <option value="poultry">علف دواجن (Poultry Feed)</option>
+                                    <option value="livestock">علف مواشي (Livestock Feed)</option>
+                                    <option value="fish">علف أسماك (Fish Feed)</option>
+                                </select>
+                            </div>
+                            <button onclick="calculateLine()" class="w-full bg-amber-500 hover:bg-amber-600 text-gray-900 font-bold py-3.5 rounded-xl shadow-lg transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                <span id="btn-calc-action">عرض التشكيلة والمواصفات المقترحة</span>
+                            </button>
+                        </div>
+
+                        <!-- Result Box -->
+                        <div class="bg-gray-800/80 rounded-2xl p-6 border border-gray-700" id="calc-result">
+                            <h3 class="text-amber-400 font-bold text-lg mb-4 flex items-center gap-2">
+                                <i class="fa-solid fa-list-check"></i>
+                                <span id="res-title">المواصفات المقترحة للخط</span>
+                            </h3>
+                            <ul class="space-y-3 text-sm text-gray-300" id="res-list">
+                                <li>• مفرمة/مجرشة: طن / ساعة (موتور 15 حصان)</li>
+                                <li>• خلاط أفقي: سعة 1 طن (موتور 10 حصان)</li>
+                                <li>• بريمة رفع وخام: قطر 6 بوصة طول 6 متر</li>
+                                <li>• لوحة تحكم كهربائية وحماية متكاملة</li>
+                            </ul>
+                            <div class="mt-6 pt-4 border-t border-gray-700">
+                                <a id="send-whatsapp-calc" href="https://wa.me201044100521" target="_blank" class="block text-center bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 rounded-xl transition text-sm">
+                                    <i class="fa-brands fa-whatsapp ml-2"></i> اطلب عرض سعر لهذه المواصفات
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section & Links -->
+    <section class="py-16 bg-amber-500/10 border-y border-amber-500/20">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-2xl sm:text-3xl font-black mb-3" id="social-title">تابع أعمالنا وفيديوهات التشغيل Live</h2>
+            <p class="text-gray-600 dark:text-gray-400 mb-8 max-w-xl mx-auto" id="social-subtitle">اشترك في صفحاتنا لمشاهدة اختبارات المعدات وتسليمات الخطوط للعملاء</p>
+            
+            <div class="flex flex-wrap justify-center gap-6">
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/share/1ByyWPKpuF/" target="_blank" class="flex items-center gap-3 bg-white dark:bg-gray-800 px-6 py-3.5 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition border border-gray-200 dark:border-gray-700 group">
+                    <i class="fa-brands fa-facebook text-2xl text-blue-600 group-hover:scale-110 transition"></i>
+                    <div class="text-right">
+                        <span class="block text-xs text-gray-500">Facebook</span>
+                        <span class="font-bold text-sm">مصنع الإيمان</span>
+                    </div>
+                </a>
+
+                <!-- TikTok -->
+                <a href="https://tiktok.com" target="_blank" class="flex items-center gap-3 bg-white dark:bg-gray-800 px-6 py-3.5 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition border border-gray-200 dark:border-gray-700 group">
+                    <i class="fa-brands fa-tiktok text-2xl text-gray-900 dark:text-white group-hover:scale-110 transition"></i>
+                    <div class="text-right">
+                        <span class="block text-xs text-gray-500">TikTok</span>
+                        <span class="font-bold text-sm">@eleman_feed</span>
+                    </div>
+                </a>
+
+                <!-- YouTube -->
+                <a href="https://www.youtube.com/@Al-Eman-egy" target="_blank" class="flex items-center gap-3 bg-white dark:bg-gray-800 px-6 py-3.5 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition border border-gray-200 dark:border-gray-700 group">
+                    <i class="fa-brands fa-youtube text-2xl text-red-600 group-hover:scale-110 transition"></i>
+                    <div class="text-right">
+                        <span class="block text-xs text-gray-500">YouTube</span>
+                        <span class="font-bold text-sm">قناة مصنع الإيمان</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4" id="footer-about-title">مصنع الإيمان لمعدات الأعلاف</h3>
+                    <p class="text-sm leading-relaxed" id="footer-about-desc">
+                        متخصصون في تصنيع وصيانة مجارش الأعلاف، خلاطات العلف الأفقية والرأسية، وخطوط الإنتاج الكاملة بأعلى جودة وخامات مقاومة للتآكل.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4" id="footer-contact-title">عناوين وتواصل</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><i class="fa-solid fa-location-dot text-amber-500 ml-2"></i> <span id="footer-address">جمهورية مصر العربية - محافظة الجيزه - بدرشين </span></li>
+                        <li><i class="fa-solid fa-phone text-amber-500 ml-2"></i> <span dir="ltr">+2010 38232391</span></li>
+                        <li><i class="fa-solid fa-envelope text-amber-500 ml-2"></i> info@eleman-feed.com</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4" id="footer-links-title">روابط سريعة</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#products" class="hover:text-amber-400">مجال المجارش (نصف طن / طن / طن ونص)</a></li>
+                        <li><a href="#products" class="hover:text-amber-400">خلاطات الأعلاف الأفقية والرأسية</a></li>
+                        <li><a href="#calculator" class="hover:text-amber-400">حاسبة خطوط الإنتاج</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-800 text-center text-xs text-gray-500" id="footer-copy">
+                جميع الحقوق محفوظة © مصنع الإيمان لمعدات الأعلاف 2026
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Data & Logic -->
+    <script>
+        // Language Data Store
+        const i18n = {
+            ar: {
+                brandTitle: "مصنع الإيمان",
+                brandSub: "لتصنيع معدات وخطوط الأعلاف",
+                navHome: "الرئيسية",
+                navAbout: "عن المصنع",
+                navProducts: "المعدات والمنتجات",
+                navCalc: "حاسبة الخطوط",
+                navContact: "تواصل معنا",
+                btnWhatsapp: "واتساب",
+                heroBadge: "الجودة والصلابة في تصنيع المعدات",
+                heroTitle: ' شــركة الايمــــــــــــان لتصنيع معدات <span class="text-amber-500">الأعلاف</span>',
+                heroDesc: "نصنع أفضل المجارش، الخلاطات، والبراريم بأعلى معايير المتانة والتصنيع الدقيق لضمان أعلى إنتاجية لمشروعك بأقل استهلاك للطاقة.",
+                heroBtnProd: "استعراض المعدات",
+                heroBtnCalc: "احسب خط إنتاجك",
+                prodHeading: "منتجاتنا ومعداتنا",
+                prodSubheading: "اختر نوع المعدة لعرض الموديلات والسعات المختلفة المتوفرة لدينا",
+                catAll: "الكل",
+                catCrusher: "المجارش",
+                catMixer: "الخلاطات",
+                catConveyor: "البراريم وخطوط النقل",
+                btnDetails: "التفاصيل وتواصل",
+                langText: "EN"
+            },
+            en: {
+                brandTitle: "El Eman Factory",
+                brandSub: "Feed Equipment Manufacturing",
+                navHome: "Home",
+                navAbout: "About Us",
+                navProducts: "Equipment",
+                navCalc: "Line Calculator",
+                navContact: "Contact",
+                btnWhatsapp: "WhatsApp",
+                heroBadge: "Quality & Durability in Manufacturing",
+                heroTitle: 'Al-Iman Equipment Manufacturing Company<span class="text-amber-500">Animal Feed</span>',
+                heroDesc: "We manufacture high-durability feed grinders, mixers, and conveyors with precision engineering to maximize your plant's output.",
+                heroBtnProd: "Browse Equipment",
+                heroBtnCalc: "Line Calculator",
+                prodHeading: "Our Equipment Catalog",
+                prodSubheading: "Explore our range of heavy-duty feed processing machinery",
+                catAll: "All",
+                catCrusher: "Grinders",
+                catMixer: "Mixers",
+                catConveyor: "Conveyors",
+                btnDetails: "Details & Quote",
+                langText: "عربي"
+            }
+        };
+
+
+    // Render Products Catalog
+    function renderProducts(category = 'all') {
+        const grid = document.getElementById('products-grid');
+        grid.innerHTML = '';
+
+        const filtered = category === 'all' 
+            ? products 
+            : products.filter(p => p.category === category);
+
+        filtered.forEach(p => {
+            const title = currentLang === 'ar' ? p.titleAr : p.titleEn;
+            const desc = currentLang === 'ar' ? p.descAr : p.descEn;
+            const specs = currentLang === 'ar' ? p.specsAr : p.specsEn;
+            const btnText = currentLang === 'ar' ? 'استفسار عبر الواتساب' : 'Inquire via WhatsApp';
+
+            // التقاط نوع العرض: صورة إن وجدت، أو أيقونة افتراضية
+            const mediaContent = (p.image && p.image.trim() !== '') 
+                ? `<img src="${p.image}" alt="${title}" class="w-full h-full object-cover rounded-xl">`
+                : `<i class="fa-solid ${p.category === 'crusher' ? 'fa-gears' : p.category === 'mixer' ? 'fa-arrows-rotate' : 'fa-network-wired'} text-5xl text-amber-500"></i>`;
+
+            const card = document.createElement('div');
+            card.className = 'bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 shadow-md hover:shadow-xl transition flex flex-col justify-between';
+            
+            card.innerHTML = `
+                <div>
+                    <div class="w-full h-48 rounded-xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center mb-5 overflow-hidden">
+                        ${mediaContent}
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">${title}</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">${desc}</p>
+                    <ul class="space-y-1.5 text-xs text-gray-500 dark:text-gray-400 mb-6">
+                        ${specs.map(s => `<li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-500"></i> ${s}</li>`).join('')}
+                    </ul>
+                </div>
+                <a href="https://wa.me/201044100521?text=${encodeURIComponent('السلام عليكم، محتاج تفاصيل عن: ' + title)}" target="_blank" class="w-full bg-amber-500/10 hover:bg-amber-500 text-amber-600 hover:text-gray-900 dark:text-amber-400 font-bold py-2.5 rounded-xl text-center transition flex items-center justify-center gap-2 text-sm">
+                    <i class="fa-brands fa-whatsapp"></i> ${btnText}
+                </a>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+        let currentLang = 'ar';
+
+        // Toggle Dark/Light Mode
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const icon = document.getElementById('theme-icon');
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                icon.className = 'fa-solid fa-moon text-gray-700 text-lg';
+            } else {
+                html.classList.add('dark');
+                icon.className = 'fa-solid fa-sun text-amber-400 text-lg';
+            }
+        }
+
+        // Toggle Language (AR / EN)
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            document.documentElement.lang = currentLang;
+            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+
+            // Update Text
+            const t = i18n[currentLang];
+            document.getElementById('brand-title').innerText = t.brandTitle;
+            document.getElementById('brand-subtitle').innerText = t.brandSub;
+            document.getElementById('nav-home').innerText = t.navHome;
+            document.getElementById('nav-about').innerText = t.navAbout;
+            document.getElementById('nav-products').innerText = t.navProducts;
+            document.getElementById('nav-calc').innerText = t.navCalc;
+            document.getElementById('nav-contact').innerText = t.navContact;
+            document.getElementById('btn-whatsapp-header').innerText = t.btnWhatsapp;
+            document.getElementById('hero-badge').innerText = t.heroBadge;
+            document.getElementById('hero-title').innerHTML = t.heroTitle;
+            document.getElementById('hero-desc').innerText = t.heroDesc;
+            document.getElementById('hero-btn-products').innerHTML = `<i class="fa-solid fa-gears"></i> ${t.heroBtnProd}`;
+            document.getElementById('hero-btn-calc').innerHTML = `<i class="fa-solid fa-calculator"></i> ${t.heroBtnCalc}`;
+            document.getElementById('prod-heading').innerText = t.prodHeading;
+            document.getElementById('prod-subheading').innerText = t.prodSubheading;
+            document.getElementById('cat-all').innerText = t.catAll;
+            document.getElementById('cat-crusher').innerText = t.catCrusher;
+            document.getElementById('cat-mixer').innerText = t.catMixer;
+            document.getElementById('cat-conveyor').innerText = t.catConveyor;
+            document.getElementById('lang-btn-text').innerText = t.langText;
+
+            renderProducts('all');
+        }
+
+        // Render Products Catalog
+        function renderProducts(category = 'all') {
+            const grid = document.getElementById('products-grid');
+            grid.innerHTML = '';
+
+            const filtered = category === 'all' 
+                ? products 
+                : products.filter(p => p.category === category);
+
+            filtered.forEach(p => {
+                const title = currentLang === 'ar' ? p.titleAr : p.titleEn;
+                const desc = currentLang === 'ar' ? p.descAr : p.descEn;
+                const specs = currentLang === 'ar' ? p.specsAr : p.specsEn;
+                const btnText = currentLang === 'ar' ? 'استفسار عبر الواتساب' : 'Inquire via WhatsApp';
+
+                const card = document.createElement('div');
+                card.className = 'bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 shadow-md hover:shadow-xl transition flex flex-col justify-between';
+                
+                card.innerHTML = `
+                    <div>
+                        <div class="w-full h-44 rounded-xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center mb-5 text-amber-500">
+                            <i class="fa-solid ${p.category === 'crusher' ? 'fa-gears' : p.category === 'mixer' ? 'fa-arrows-rotate' : 'fa-network-wired'} text-5xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">${title}</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">${desc}</p>
+                        <ul class="space-y-1.5 text-xs text-gray-500 dark:text-gray-400 mb-6">
+                            ${specs.map(s => `<li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-500"></i> ${s}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/201044100521?text=${encodeURIComponent('السلام عليكم، محتاج تفاصيل عن: ' + title)}" target="_blank" class="w-full bg-amber-500/10 hover:bg-amber-500 text-amber-600 hover:text-gray-900 dark:text-amber-400 font-bold py-2.5 rounded-xl text-center transition flex items-center justify-center gap-2 text-sm">
+                        <i class="fa-brands fa-whatsapp"></i> ${btnText}
+                    </a>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Filter Function
+        function filterProducts(cat) {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.className = 'filter-btn px-5 py-2 rounded-full font-bold text-sm bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-300 hover:bg-amber-500/20 transition';
+            });
+            const activeBtn = document.querySelector(`[data-cat="${cat}"]`);
+            if (activeBtn) {
+                activeBtn.className = 'filter-btn px-5 py-2 rounded-full font-bold text-sm bg-amber-500 text-gray-900 shadow-md transition';
+            }
+            renderProducts(cat);
+        }
+
+        // Line Specifications Calculator
+        function calculateLine() {
+            const cap = document.getElementById('calc-capacity').value;
+            const resList = document.getElementById('res-list');
+            const waLink = document.getElementById('send-whatsapp-calc');
+
+            let specs = [];
+            if (cap === "0.5") {
+                specs = [
+                    "• مجرشة أعلاف: 0.5 طن / ساعة (موتور 10 حصان)",
+                    "• خلاط أفقي أو رأسي: سعة 500 كجم",
+                    "• بريمة رفع خامات 6 بوصة",
+                    "• لوحة تشغيل وتشغيل هادئ وموفر"
+                ];
+            } else if (cap === "1") {
+                specs = [
+                    "• مجرشة أعلاف: 1 طن / ساعة (موتور 15 - 20 حصان)",
+                    "• خلاط أفقي سعة 1 طن (موتور 10 حصان)",
+                    "• عدد 2 بريمة رفع ونقل خامات",
+                    "• لوحة حماية كهربائية متكاملة"
+                ];
+            } else if (cap === "1.5") {
+                specs = [
+                    "• مجرشة أعلاف: 1.5 طن / ساعة (موتور 25-30 حصان)",
+                    "• خلاط أفقي سعة 1.5 طن ثنائي الشريط",
+                    "• براميل ونواقل أوتوماتيكية مع ناطحة",
+                    "• لوحة كونترول متقدمة"
+                ];
+            } else {
+                specs = [
+                    "• مجرشة أعلاف خط ثقيل: 3 طن / ساعة",
+                    "• خلاط أفقي سعة 3 طن مع جيربوكس إيطالي",
+                    "• خط نقل وتغذية أوتوماتيكي بالكامل",
+                    "• نظام سحب أتربة وفلاتر"
+                ];
+            }
+
+            resList.innerHTML = specs.map(s => `<li>${s}</li>`).join('');
+            const text = `السلام عليكم، أريد طلب عرض سعر لخط إنتاج بطاقة ${cap} طن/ساعة بالمواصفات التالية:\n` + specs.join('\n');
+            waLink.href = `https://wa.me/201044100521?text=${encodeURIComponent(text)}`;
+        }
+
+        // Initialize First Render
+        renderProducts('all');
+        calculateLine();
+            // دالة التمرير لأعلى الصفحة بنعومة
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>
